@@ -1,0 +1,264 @@
+start test with 400N and 2 WG
+mié mar 16 13:59:09 -05 2022
+The group size is 2
+Read file
+End of file ./window64ms/BD400_64ms/XeAe.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/theta.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/assignments.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/proportions.csv reached successfully
+Time taken by program is : 67 sec with 400 Neurons
+
+=====     =====     =====     =====
+Comparison Workstation OpenCL vs. openCL VIM3:
+Experiments for parameters (neurons, time)= (400,64)
+labelsBindsnetIn vs. labelsVIM3Paralelo: 90.8 % for 10000 samples
+labelsBindsnetIn vs. labelsBindsnetOut: 90.5 % for 10000 samples
+=====     =====     =====     =====
+mié mar 16 14:00:16 -05 2022
+
+Net with 2 WG: test done
+
+-----
+start test with 400N and 4 WG
+mié mar 16 14:00:16 -05 2022
+The group size is 4
+Read file
+End of file ./window64ms/BD400_64ms/XeAe.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/theta.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/assignments.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/proportions.csv reached successfully
+Time taken by program is : 59 sec with 400 Neurons
+
+=====     =====     =====     =====
+Comparison Workstation OpenCL vs. openCL VIM3:
+Experiments for parameters (neurons, time)= (400,64)
+labelsBindsnetIn vs. labelsVIM3Paralelo: 90.8 % for 10000 samples
+labelsBindsnetIn vs. labelsBindsnetOut: 90.5 % for 10000 samples
+=====     =====     =====     =====
+mié mar 16 14:01:15 -05 2022
+
+Net with 4 WG: test done
+
+-----
+start test with 400N and 5 WG
+mié mar 16 14:01:15 -05 2022
+The group size is 5
+Read file
+End of file ./window64ms/BD400_64ms/XeAe.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/theta.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/assignments.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/proportions.csv reached successfully
+Time taken by program is : 59 sec with 400 Neurons
+
+=====     =====     =====     =====
+Comparison Workstation OpenCL vs. openCL VIM3:
+Experiments for parameters (neurons, time)= (400,64)
+labelsBindsnetIn vs. labelsVIM3Paralelo: 90.7 % for 10000 samples
+labelsBindsnetIn vs. labelsBindsnetOut: 90.5 % for 10000 samples
+=====     =====     =====     =====
+mié mar 16 14:02:14 -05 2022
+
+Net with 5 WG: test done
+
+-----
+start test with 400N and 8 WG
+mié mar 16 14:02:14 -05 2022
+The group size is 8
+Read file
+End of file ./window64ms/BD400_64ms/XeAe.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/theta.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/assignments.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/proportions.csv reached successfully
+Time taken by program is : 60 sec with 400 Neurons
+
+=====     =====     =====     =====
+Comparison Workstation OpenCL vs. openCL VIM3:
+Experiments for parameters (neurons, time)= (400,64)
+labelsBindsnetIn vs. labelsVIM3Paralelo: 90.7 % for 10000 samples
+labelsBindsnetIn vs. labelsBindsnetOut: 90.5 % for 10000 samples
+=====     =====     =====     =====
+mié mar 16 14:03:14 -05 2022
+
+Net with 8 WG: test done
+
+-----
+start test with 400N and 10 WG
+mié mar 16 14:03:14 -05 2022
+The group size is 10
+Read file
+End of file ./window64ms/BD400_64ms/XeAe.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/theta.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/assignments.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/proportions.csv reached successfully
+Time taken by program is : 59 sec with 400 Neurons
+
+=====     =====     =====     =====
+Comparison Workstation OpenCL vs. openCL VIM3:
+Experiments for parameters (neurons, time)= (400,64)
+labelsBindsnetIn vs. labelsVIM3Paralelo: 90.8 % for 10000 samples
+labelsBindsnetIn vs. labelsBindsnetOut: 90.5 % for 10000 samples
+=====     =====     =====     =====
+mié mar 16 14:04:13 -05 2022
+
+Net with 10 WG: test done
+
+-----
+start test with 400N and 16 WG
+mié mar 16 14:04:13 -05 2022
+The group size is 16
+Read file
+End of file ./window64ms/BD400_64ms/XeAe.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/theta.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/assignments.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/proportions.csv reached successfully
+Time taken by program is : 58 sec with 400 Neurons
+
+=====     =====     =====     =====
+Comparison Workstation OpenCL vs. openCL VIM3:
+Experiments for parameters (neurons, time)= (400,64)
+labelsBindsnetIn vs. labelsVIM3Paralelo: 90.8 % for 10000 samples
+labelsBindsnetIn vs. labelsBindsnetOut: 90.5 % for 10000 samples
+=====     =====     =====     =====
+mié mar 16 14:05:12 -05 2022
+
+Net with 16 WG: test done
+
+-----
+start test with 400N and 20 WG
+mié mar 16 14:05:12 -05 2022
+The group size is 20
+Read file
+End of file ./window64ms/BD400_64ms/XeAe.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/theta.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/assignments.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/proportions.csv reached successfully
+Time taken by program is : 58 sec with 400 Neurons
+
+=====     =====     =====     =====
+Comparison Workstation OpenCL vs. openCL VIM3:
+Experiments for parameters (neurons, time)= (400,64)
+labelsBindsnetIn vs. labelsVIM3Paralelo: 90.8 % for 10000 samples
+labelsBindsnetIn vs. labelsBindsnetOut: 90.5 % for 10000 samples
+=====     =====     =====     =====
+mié mar 16 14:06:11 -05 2022
+
+Net with 20 WG: test done
+
+-----
+start test with 400N and 40 WG
+mié mar 16 14:06:11 -05 2022
+The group size is 40
+Read file
+End of file ./window64ms/BD400_64ms/XeAe.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/theta.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/assignments.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/proportions.csv reached successfully
+Time taken by program is : 58 sec with 400 Neurons
+
+=====     =====     =====     =====
+Comparison Workstation OpenCL vs. openCL VIM3:
+Experiments for parameters (neurons, time)= (400,64)
+labelsBindsnetIn vs. labelsVIM3Paralelo: 90.7 % for 10000 samples
+labelsBindsnetIn vs. labelsBindsnetOut: 90.5 % for 10000 samples
+=====     =====     =====     =====
+mié mar 16 14:07:09 -05 2022
+
+Net with 40 WG: test done
+
+-----
+start test with 400N and 50 WG
+mié mar 16 14:07:09 -05 2022
+The group size is 50
+Read file
+End of file ./window64ms/BD400_64ms/XeAe.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/theta.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/assignments.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/proportions.csv reached successfully
+Time taken by program is : 58 sec with 400 Neurons
+
+=====     =====     =====     =====
+Comparison Workstation OpenCL vs. openCL VIM3:
+Experiments for parameters (neurons, time)= (400,64)
+labelsBindsnetIn vs. labelsVIM3Paralelo: 90.7 % for 10000 samples
+labelsBindsnetIn vs. labelsBindsnetOut: 90.5 % for 10000 samples
+=====     =====     =====     =====
+mié mar 16 14:08:08 -05 2022
+
+Net with 50 WG: test done
+
+-----
+start test with 400N and 80 WG
+mié mar 16 14:08:08 -05 2022
+The group size is 80
+Read file
+End of file ./window64ms/BD400_64ms/XeAe.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/theta.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/assignments.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/proportions.csv reached successfully
+Time taken by program is : 64 sec with 400 Neurons
+
+=====     =====     =====     =====
+Comparison Workstation OpenCL vs. openCL VIM3:
+Experiments for parameters (neurons, time)= (400,64)
+labelsBindsnetIn vs. labelsVIM3Paralelo: 90.7 % for 10000 samples
+labelsBindsnetIn vs. labelsBindsnetOut: 90.5 % for 10000 samples
+=====     =====     =====     =====
+mié mar 16 14:09:13 -05 2022
+
+Net with 80 WG: test done
+
+-----
+start test with 400N and 100 WG
+mié mar 16 14:09:13 -05 2022
+The group size is 100
+Read file
+End of file ./window64ms/BD400_64ms/XeAe.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/theta.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/assignments.csv reached successfully
+Read file
+End of file ./window64ms/BD400_64ms/proportions.csv reached successfully
+Time taken by program is : 71 sec with 400 Neurons
+
+=====     =====     =====     =====
+Comparison Workstation OpenCL vs. openCL VIM3:
+Experiments for parameters (neurons, time)= (400,64)
+labelsBindsnetIn vs. labelsVIM3Paralelo: 90.8 % for 10000 samples
+labelsBindsnetIn vs. labelsBindsnetOut: 90.5 % for 10000 samples
+=====     =====     =====     =====
+mié mar 16 14:10:25 -05 2022
+
+Net with 100 WG: test done
+
+-----

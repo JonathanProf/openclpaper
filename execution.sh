@@ -1,47 +1,55 @@
-#!/bin/bash
+NEURONS=400
+
+rm "classification/labelsVIM3openCL"$NEURONS"N_64ms.csv"
 
 clear
-rm main.out ./classification/labelsVIM3openCL400N_64ms.csv
 g++ -Wall main.cpp functions.cpp -o  main.out -lOpenCL -std=c++11
 
+DATE=$(eval date --iso-8601='minutes')
+fileOut='results/log_'$NEURONS'N_64ms_'$DATE'.txt'
 
-file_out=log_400N_64ms_test_23_2_binInput.txt
-for i in 5
+#<<comment
+for i in 2 4 5 8 10 16 20 40 50 80 100;
 do
-		echo "******************************"
-        echo "* Start probe with $i groups *"
-        echo "******************************"
-        date
-        echo "******************************" >> $file_out
-        echo "* Start probe with $i groups *" >> $file_out
-        echo "******************************" >> $file_out
-        date >> $file_out
-        time ./main.out $i >> $file_out
-        echo "" >> $file_out
-        echo "=====     =====     =====     =====" >> $file_out
-        echo "Comparison betweenSerial vs. openCL codes 400N:" >> $file_out
-        python3 file_comparison.py >> $file_out
-        echo "=====     =====     =====     =====" >> $file_out
-        date >> $file_out
-        echo "****************************" >> $file_out
-        echo "* End probe with $i groups *" >> $file_out
-        echo "****************************" >> $file_out
-        echo "-" >> $file_out
-        echo "-" >> $file_out
+    echo "start test with "$NEURONS"N and $i WG"
+    echo "start test with "$NEURONS"N and $i WG" >> $fileOut
 
-        echo ""
-        echo "=====     =====     =====     ====="
-        echo "Comparison betweenSerial vs. openCL codes 400N:"
-        python3 file_comparison.py
-        echo "=====     =====     =====     ====="
-        date
-        echo "****************************"
-        echo "* End probe with $i groups *"
-        echo "****************************"
-        
-		rm ./classification/labelsVIM3openCL400N_64ms.csv
-		echo "-"
-        echo "-"
+    date
+    date >> $fileOut
+
+    time ./main.out $i >> $fileOut
+
+    echo ""
+    echo "" >> $fileOut
+
+    echo "=====     =====     =====     ====="
+    echo "=====     =====     =====     =====" >> $fileOut
+
+    echo "Comparison Workstation OpenCL vs. openCL VIM3:"
+    echo "Comparison Workstation OpenCL vs. openCL VIM3:" >> $fileOut
+
+    python3 PythonCode/file_comparison.py
+    python3 PythonCode/file_comparison.py >> $fileOut
+
+    echo "=====     =====     =====     ====="
+    echo "=====     =====     =====     =====" >> $fileOut
+
+    date
+    date >> $fileOut
+
+    echo ""
+    echo "" >> $fileOut
+
+    rm "classification/labelsVIM3openCL"$NEURONS"N_64ms.csv"
+
+    echo "Net with $i WG: test done"
+    echo "Net with $i WG: test done" >> $fileOut
+
+    echo ""
+    echo "" >> $fileOut
+    
+    echo "-----"
+    echo "-----">> $fileOut
 done
-
 rm main.out
+#comment

@@ -15,7 +15,7 @@
 #include <CL/cl.h>
 #endif
 
-#define DEBUG_CASE 0
+#define DEBUG_CASE 1
 #define NUM_PIXELS 784
 #define SINGLE_SAMPLE_TIME 64
 
@@ -107,7 +107,7 @@ const char* opencl_error_to_str (cl_int error) {
 using namespace std;
 
 #define PATH_SAMPLES_POISSON "./inputSamples_64ms/%05d_inputSpikesPoisson_64ms.dat"
-#define PATH_PARAMETERS_NET "./window64ms/BD400_64ms/"
+#define PATH_PARAMETERS_NET "./window64ms/BD1600_64ms/"
 #define PATH_RESULTS_NET "./classification/"
 
 int main(int argc, char *argv[])
@@ -122,7 +122,7 @@ int main(int argc, char *argv[])
 	float weights_Ae_Ai_constant = 22.5;
     float weights_Ai_Ae_constant = -120.0;
 	
-	const int NUM_NEURONS = 400;
+	const int NUM_NEURONS = 1600;
 	const int numPixels = 784;
 	int indexWin = NUM_NEURONS;
     //! =====     =====     =====
@@ -290,19 +290,19 @@ int main(int argc, char *argv[])
 	cl_kernel kernel = clCreateKernel(program, "mainKernel", &clStatus);
 	CHECK_STATUS(clStatus);
 
-	cl_mem cl_mem_theta                  	= clCreateBuffer(context, CL_MEM_READ_ONLY, (NUM_NEURONS) * sizeof(float), NULL, &clStatus);
+	cl_mem cl_mem_theta            = clCreateBuffer(context, CL_MEM_READ_ONLY, (NUM_NEURONS) * sizeof(float), NULL, &clStatus);
 	CHECK_STATUS(clStatus);
-	cl_mem cl_mem_weightsXeAe       	= clCreateBuffer(context, CL_MEM_READ_ONLY, (numPixels*NUM_NEURONS) * sizeof(float), NULL, &clStatus);
+	cl_mem cl_mem_weightsXeAe      = clCreateBuffer(context, CL_MEM_READ_ONLY, (numPixels*NUM_NEURONS) * sizeof(float), NULL, &clStatus);
 	CHECK_STATUS(clStatus);
-	cl_mem cl_mem_weightsAeAi        	= clCreateBuffer(context, CL_MEM_READ_ONLY, (NUM_NEURONS*NUM_NEURONS) * sizeof(float), NULL, &clStatus);
+	cl_mem cl_mem_weightsAeAi      = clCreateBuffer(context, CL_MEM_READ_ONLY, (NUM_NEURONS*NUM_NEURONS) * sizeof(float), NULL, &clStatus);
 	CHECK_STATUS(clStatus);
-	cl_mem cl_mem_weightsAiAe        	= clCreateBuffer(context, CL_MEM_READ_ONLY, (NUM_NEURONS*NUM_NEURONS) * sizeof(float), NULL, &clStatus);
+	cl_mem cl_mem_weightsAiAe      = clCreateBuffer(context, CL_MEM_READ_ONLY, (NUM_NEURONS*NUM_NEURONS) * sizeof(float), NULL, &clStatus);
 	CHECK_STATUS(clStatus);
-	cl_mem cl_mem_input_sample      	= clCreateBuffer(context, CL_MEM_READ_ONLY, (2*numPixels) * sizeof(unsigned int), NULL, &clStatus);
+	cl_mem cl_mem_input_sample     = clCreateBuffer(context, CL_MEM_READ_ONLY, (2*numPixels) * sizeof(unsigned int), NULL, &clStatus);
 	CHECK_STATUS(clStatus);
-	cl_mem cl_mem_spikesXePre 			= clCreateBuffer(context, CL_MEM_READ_WRITE, numPixels * sizeof(bool), NULL, &clStatus);
+	cl_mem cl_mem_spikesXePre 	   = clCreateBuffer(context, CL_MEM_READ_WRITE, numPixels * sizeof(bool), NULL, &clStatus);
 	CHECK_STATUS(clStatus);
-	cl_mem cl_mem_spikesXePos        	= clCreateBuffer(context, CL_MEM_READ_WRITE, (numPixels) * sizeof(bool), NULL, &clStatus);
+	cl_mem cl_mem_spikesXePos      = clCreateBuffer(context, CL_MEM_READ_WRITE, (numPixels) * sizeof(bool), NULL, &clStatus);
 	CHECK_STATUS(clStatus);
 	cl_mem cl_mem_spikes_Ae_Ai_pre = clCreateBuffer(context, CL_MEM_READ_WRITE, NUM_NEURONS * sizeof(bool), NULL, &clStatus);
 	CHECK_STATUS(clStatus);
@@ -312,11 +312,11 @@ int main(int argc, char *argv[])
 	CHECK_STATUS(clStatus);
 	cl_mem cl_mem_spikes_Ai_Ae_pos = clCreateBuffer(context, CL_MEM_READ_WRITE, (NUM_NEURONS) * sizeof(bool), NULL, &clStatus);
 	CHECK_STATUS(clStatus);
-	cl_mem cl_mem_spike_count			= clCreateBuffer(context, CL_MEM_READ_WRITE, (NUM_NEURONS) * sizeof(unsigned short int), NULL, &clStatus);
+	cl_mem cl_mem_spike_count	   = clCreateBuffer(context, CL_MEM_READ_WRITE, (NUM_NEURONS) * sizeof(unsigned short int), NULL, &clStatus);
 	CHECK_STATUS(clStatus);
-	cl_mem cl_mem_assignments			= clCreateBuffer(context, CL_MEM_READ_ONLY, (NUM_NEURONS) * sizeof(unsigned short int), NULL, &clStatus);
+	cl_mem cl_mem_assignments	   = clCreateBuffer(context, CL_MEM_READ_ONLY, (NUM_NEURONS) * sizeof(unsigned short int), NULL, &clStatus);
 	CHECK_STATUS(clStatus);
-	cl_mem cl_mem_digits					= clCreateBuffer(context, CL_MEM_READ_WRITE, (10) * sizeof(unsigned short int), NULL, &clStatus);
+	cl_mem cl_mem_digits		   = clCreateBuffer(context, CL_MEM_READ_WRITE, (10) * sizeof(unsigned short int), NULL, &clStatus);
 	CHECK_STATUS(clStatus);		
 	cl_mem cl_mem_vE = clCreateBuffer(context, CL_MEM_READ_WRITE, NUM_NEURONS * sizeof(float), NULL, &clStatus);
 	CHECK_STATUS(clStatus);
@@ -436,7 +436,7 @@ int main(int argc, char *argv[])
 		
         //! Simulate network activity for single_sample_time timesteps.
         #if DEBUG_CASE != 0
-        for (int indT = single_sample_time-2; indT < single_sample_time; ++indT)
+        for (int indT = 0; indT < 2; ++indT)
         #else
         for (int indT = 0; indT < single_sample_time; ++indT)
         #endif

@@ -7,7 +7,7 @@
 #include <cassert>
 
 #define DEBUG_INPUT false
-const int NUM_NEURONS = 400;
+const int NUM_NEURONS = 1600;
 
 // Function prototypes
 void getAssignments(unsigned short int *assignments, std::string fileName );

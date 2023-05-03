@@ -9,19 +9,22 @@ import numpy as np
 
 _path = './classification/'
 
-n_neurons = 400
+n_neurons = 1600
 time = 64
 
 # Labels Comparison
 f1 = np.fromfile( _path + 'labelsBindsnetOut' + str(n_neurons) +'N_64ms.csv', dtype = np.int8 ,sep='\n')
 f2 = np.fromfile( _path + 'labelsVIM3openCL' + str(n_neurons) +'N_64ms.csv', dtype = np.int8 ,sep='\n')
-f3 = np.fromfile( _path + 'labelsBindsnetIn' + str(400) +'N_64ms.csv', dtype = np.int8 ,sep='\n')
+f3 = np.fromfile( _path + 'labelsBindsnetIn' + str(n_neurons) +'N_64ms.csv', dtype = np.int8 ,sep='\n')
 cmp2 = 0
 cmp1 = 0
 tam = len(f2) if len(f2) < len(f1) else len(f1)
 for i in range(tam):
 	if(f3[i] == f2[i]):
-		cmp1+=1
+		cmp1+=1;
+	else:
+		if i < 100:
+			print("INDEX[{0}] - BINDSNET[{1}] - OPENCL [{2}] ".format( i+1, f3[i], f2[i]))
 		
 	if(f3[i] == f1[i]):
 		cmp2+=1
